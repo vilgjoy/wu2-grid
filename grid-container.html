@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
     <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            background-color: #f0f0f0;
+        }
+
         .grid-container {
-            grid-template-columns: 3rem 25% 1fr 2fr;
+            display: grid;
+            width: 80vw;
+            gap: 10px; 
+            padding: 10px;
+            border: 2px solid #333;
+            grid-template-columns: minmax(auto, 50%) 1fr 3em;
+            grid-template-rows: minmax(100px, auto);
+            
+        }
+
+        div {
+            background-color: aqua;
+            display: flex;
         }
     </style>
     <div class="grid-container">
@@ -17,6 +38,8 @@
 	    <div>2</div>
 	    <div>3</div>
         <div>4</div>
+        <div>5</div>
+        <div>6</div>
     </div>
 </body>
 </html>
