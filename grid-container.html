@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
+    <title>Grid Areas</title>
 </head>
 <body>
     <style>
@@ -19,33 +18,56 @@
 
         .grid-container {
             display: grid;
-            /* width: 50vw; */
-            gap: 2rem; 
+            gap: 10px; 
             padding: 10px;
             border: 2px solid #333;
-            grid-template-columns: 30px repeat(3, [kol-start] 1fr [kol-slut]) 30px;
-            grid-template-rows: repeat(2, [rad-start] 100px [rad-slut]);            
+            width: 80vw; 
+            height: 60vh; 
+            
+            grid-template-columns: 1fr 200px;
+            grid-template-rows: 150px 1fr 100px;
+            
+            grid-template-areas: 
+                "header header"
+                "content sidebar"
+                "footer footer";
         }
 
-        #item-1 {
-            background-color: orange; 
-            grid-row: rad-start 1 / rad-slut 2;
-            grid-column: kol-start 1 / kol-slut 3;
+        #min-header {
+            grid-area: header; 
+            background-color: orange;
+        }
+
+        #mitt-content {
+            grid-area: content;
+            background-color: lightgreen;
+        }
+
+        #min-sidebar {
+            grid-area: sidebar;
+            background-color: pink;
+        }
+
+        #min-footer {
+            grid-area: footer;
+            background-color: skyblue;
         }
 
         .grid-container > div {
-            background-color: skyblue;
-            border: 1px solid #0077cc;
+            border: 1px solid #333;
             display: flex;
             align-items: center;
             justify-content: center;
+            font-size: 1.5rem;
+            font-weight: bold;
         }
     </style>
+    
     <div class="grid-container">
-        <div id="item-1">1</div>
-	    <div>2</div>
-	    <div>3</div>
-        <div>4</div>
+        <div id="min-header">HEADER</div>
+        <div id="mitt-content">CONTENT</div>
+        <div id="min-sidebar">SIDEBAR</div>
+        <div id="min-footer">FOOTER</div>
     </div>
 </body>
 </html>
